@@ -13,11 +13,14 @@ const Footer = ({toast, setIsLogin, isLogin}) => {
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
 
+  const [loading, setLoading] = useState(false);
+
   const handleClick = async () => {
     try {
+      setLoading(true)
       const data = {aboutMadrasha, address, number, email, website};
-      const res = await API.post("/footer", data);
-      console.log(res)
+      await API.post("/footer", data);
+      setLoading(false);
     } catch (error) {
       console.log(error)
     }
@@ -37,10 +40,13 @@ const Footer = ({toast, setIsLogin, isLogin}) => {
       }
     }
     fetchData()
-  }, []);
+  }, [loading]);
 
   return (
     <footer className="bg-gray-800 text-white py-12 relative">
+      {
+        loading && <div className="w-10 h-10 absolute right-2 top-1 animate-spin rounded-full border-dashed border-8 border-[#3b9df8] " ></div>
+      }
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className='bg-gray-900 p-4 rounded-lg'>

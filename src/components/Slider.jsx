@@ -1,6 +1,6 @@
 
-import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import { useEffect} from "react";
+
 import {
   BsFillArrowRightCircleFill,
   BsFillArrowLeftCircleFill,
@@ -8,7 +8,7 @@ import {
 
 
 
-function Slider({slides, isLogin, current, setCurrent }) {
+function Slider({slides, current, setCurrent }) {
 
   const previousSlide = () => {
     setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
@@ -16,10 +16,6 @@ function Slider({slides, isLogin, current, setCurrent }) {
 
   const nextSlide = () => {
     setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  };
-
-  const handleDelete = () => {
-    alert("hello")
   };
 
   useEffect(() => {

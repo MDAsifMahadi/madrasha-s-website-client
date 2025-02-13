@@ -94,9 +94,9 @@ const Home = ({isLogin, setIsLogin}) => {
         <Slider current={current} setCurrent={setCurrent} slides={slides} setSliders={setSliders} isLogin={isLogin}/>
       </div>
 
-      <div className="group relative min-h-1">
+      <div className="relative min-h-1">
       {
-        isLogin && <FaPlus size={30} className="text-cyan-700 absolute top-[-30px] md:left-10 bg-gray-300 opacity-0 group-hover:opacity-100" onClick={()=> setIsOpen(true)} />
+        isLogin && <FaPlus size={30} className="text-cyan-700 absolute top-[-30px] md:left-10 bg-gray-300 opacity-100" onClick={()=> setIsOpen(true)} />
       }
         {
           cards.map((card) => (
@@ -106,10 +106,9 @@ const Home = ({isLogin, setIsLogin}) => {
         <PopupBox isOpen={isOpen} setIsOpen={setIsOpen}  />
       </div>  
 
-      <Link className="w-full flex justify-center mb-10">
+      <div className="w-full flex justify-center mb-10">
         <Link to='/faculty' className="bg-white border-teal-700 px-2 py-2 rounded-lg text-base font-bold hover:bg-teal-800 text-teal-800 hover:text-white ring-2 ring-teal-800  duration-150 shadow-md focus:ring focus:ring-cyan-600 focus:ring-offset-5">জামিয়ার ছাত্রদের রেজাল্ট</Link>
-      </Link>
-
+      </div>
       <Footer toast={toast} setIsLogin={setIsLogin} isLogin={isLogin} />
       <ToastContainer />
     </div>

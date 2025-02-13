@@ -2,25 +2,25 @@ import {  useState } from 'react';
 import API from "../lib/API";
 import { IoCloseOutline } from "react-icons/io5";
 
-import { toast, ToastContainer} from "react-toastify"
-const CreateFaculty = ({openPopup, setOpenPopup, setIsLoading}) => {
+import { toast} from "react-toastify"
+const CreateFaculty = ({openPopup, setOpenPopup,setUpdating}) => {
 
     const [name, setName] = useState("");
 
     const handleCreate = async () => {
         try {
             if (name !== "") {
-                setIsLoading(true);
+              setUpdating(true);
                 const res = await API.post("/addclass", {newClassName : name});
                 toast.success(res.data.message);
                 setOpenPopup(!openPopup);
-                setIsLoading(false)
+                setUpdating(false)
                 return;
             }
             toast.warning("Enter a class name");
         } catch (error) {
             console.log(error)
-            setIsLoading(false)
+            setUpdating(false)
         }
 
     };
@@ -48,7 +48,7 @@ const CreateFaculty = ({openPopup, setOpenPopup, setIsLoading}) => {
           </button>
         
         </div>
-        <ToastContainer />
+      
       </div>
     </div>
     

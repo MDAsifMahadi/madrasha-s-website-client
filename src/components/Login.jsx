@@ -36,7 +36,7 @@ const Login = ({toast, openLogin, setOpenLogin,setIsLogin}) => {
         <IoCloseOutline className='text-4xl absolute right-0 top-0' 
             onClick={() => setOpenLogin(!openLogin)}
         />
-          <h2 className="text-xl font-bold mb-4">নতুন ফলাফল যুক্ত করুন</h2>
+          <h2 className="text-xl font-bold mb-4">Login</h2>
           
           <input
             type="email"

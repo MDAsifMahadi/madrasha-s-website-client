@@ -1,9 +1,10 @@
 import API from "../lib/API";
-import {toast, ToastContainer} from "react-toastify"
+import {toast} from "react-toastify"
 import { useEffect, useState} from "react"
 import { FaUpload } from "react-icons/fa6";
 import { GiSave } from "react-icons/gi";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Link } from "react-router-dom";
 
 
 const Navbar = ({isLogin}) => {
@@ -73,18 +74,20 @@ const Navbar = ({isLogin}) => {
         <link rel="icon" href={texts.logo_url} />
       </Helmet>
     </HelmetProvider>
-    <div className="group w-full p-1.5 bg-teal-700 md:relative space-y-2.5">
+    <div className="w-full p-1.5 bg-teal-700 md:relative space-y-2.5">
       {
           isUploading ? <div className="w-10 h-10 absolute right-0 animate-spin rounded-full border-dashed border-8 border-[#3b9df8]"></div> : null
         }
       {
-        isLogin && <GiSave className="absolute cursor-pointer decoration-200 opacity-0 group-hover:opacity-100" color="white" size={30} onClick={handleClick} />
+        isLogin && <GiSave className="absolute cursor-pointer decoration-200" color="white" size={30} onClick={handleClick} />
       }
       <div className=" mx-auto w-21 relative h-21 md:absolute md:left-5 md:top-4 lg:left-10">
+        <Link to="/">
         <img src={texts.logo_url} 
           alt="logo" 
           className="w-20 h-20 rounded-full"
         />
+        </Link>
         {
           isLogin && (
             <>
@@ -106,7 +109,7 @@ const Navbar = ({isLogin}) => {
         <h2 contentEditable={isLogin} suppressContentEditableWarning className="text-center font-semibold text-lg text-white" onBlur={(e) => handleChange(e, "english")}>{texts.english}</h2>
       </div>
       <p contentEditable={isLogin} suppressContentEditableWarning className="text-center text-sm text-white" onBlur={(e) => handleChange(e, "address")}>{texts.address}</p>
-      <ToastContainer />
+      
     </div>
     </>
   )

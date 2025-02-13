@@ -30,7 +30,7 @@ const PopupBox = ({ isOpen , setIsOpen}) => {
   }
   
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-gray-400/25 backdrop-blur-sm">
+    <div className="fixed inset-0 flex items-center justify-center bg-gray-400/25 backdrop-blur-sm z-40">
       <div className="bg-white p-6 rounded-lg shadow-lg w-96">
         <h2 className="text-xl font-semibold mb-4">Add Title & Description</h2>
         <input

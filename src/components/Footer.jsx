@@ -87,7 +87,7 @@ const Footer = ({toast, setIsLogin, isLogin}) => {
                 >{email}</span>
               </li>
               <li className="mb-2">
-                <strong>ওয়েবসাইট: </strong><span 
+                <strong>ওয়েবসাইট: </strong><span
                   contentEditable={isLogin} 
                   suppressContentEditableWarning
                   onBlur={e => setWebsite(e.target.innerText)}

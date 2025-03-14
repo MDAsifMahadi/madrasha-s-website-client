@@ -1,12 +1,8 @@
-
 import { useEffect} from "react";
-
 import {
   BsFillArrowRightCircleFill,
   BsFillArrowLeftCircleFill,
 } from "react-icons/bs";
-
-
 
 function Slider({slides, current, setCurrent }) {
 

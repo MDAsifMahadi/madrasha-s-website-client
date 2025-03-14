@@ -1,5 +1,4 @@
 import GetNum from "../components/GetNum";
-import Navbar from "../components/Navbar";
 import {Link} from "react-router-dom"
 const Faculty = ({phone, setPhone, isLogin}) => {
  
@@ -8,7 +7,6 @@ const Faculty = ({phone, setPhone, isLogin}) => {
   }
   return (
     <div className="w-full h-full text-center pb-10">
-      <Navbar />
       <h3 className="font-bold text-lg text-gray-700 dark:text-gray-300 py-10">বিভাগ নির্বাচন করুন</h3>
 
       <div className="flex flex-wrap items-center justify-center gap-10">

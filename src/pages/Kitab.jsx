@@ -1,5 +1,4 @@
 import GetNum from "../components/GetNum";
-import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import { FaPlus } from "react-icons/fa6";
 import { useEffect, useState } from "react";
@@ -54,8 +53,7 @@ const Kitab = ({ phone, setPhone, isLogin }) => {
 
   return (
     <div className="w-full h-full text-center pb-10 relative">
-      <Navbar />
-      
+  
       {loading && (
         <div className="w-10 h-10 absolute right-5 animate-spin rounded-full border-dashed border-8 border-[#3b9df8] z-10"></div>
       )}

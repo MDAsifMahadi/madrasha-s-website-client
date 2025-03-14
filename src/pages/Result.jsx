@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import GetNum from "../components/GetNum";
-import Navbar from "../components/Navbar";
 import { IoIosAdd } from "react-icons/io";
 import CreateResult from "../components/CreateResult";
 import {useParams} from "react-router-dom";
@@ -37,7 +36,6 @@ const Result = ({ phone, setPhone, isLogin}) => {
 
   return (
     <>
-      <Navbar />
       <div className="w-full">
         <div className="w-full md:w-[70%] mx-auto mt-5 bg-gray-200 overflow-y-auto min-h-20 md:max-h-150 rounded-lg p-5 space-y-2 relative">
         

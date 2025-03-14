@@ -1,7 +1,6 @@
 import Slider from "../components/Slider";
 import Content from "../components/Content";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { FaPlus } from "react-icons/fa6";
@@ -72,8 +71,6 @@ const Home = ({isLogin, setIsLogin}) => {
 
   return (
     <div>
-      <Navbar isLogin={isLogin} />
-
       <div className="w-[90%] md:w-[80%] m-auto pt-2 space-y-4 mb-10">
         <h3 className="text-2xl font-bold text-center text-gray-700 dark:text-gray-300">জামিয়ার কিছু ছবি</h3>
 
@@ -106,8 +103,11 @@ const Home = ({isLogin, setIsLogin}) => {
         <PopupBox isOpen={isOpen} setIsOpen={setIsOpen}  />
       </div>  
 
-      <div className="w-full flex justify-center mb-10">
-        <Link to='/faculty' className="bg-white border-teal-700 px-2 py-2 rounded-lg text-base font-bold hover:bg-teal-800 text-teal-800 hover:text-white ring-2 ring-teal-800  duration-150 shadow-md focus:ring focus:ring-cyan-600 focus:ring-offset-5">জামিয়ার ছাত্রদের রেজাল্ট</Link>
+      <div className="w-full flex flex-col md:flex-row justify-center items-center mb-10 text-center">
+
+        <Link to='/faculty' className="bg-white border-teal-700 px-2 py-2 rounded-lg text-base font-bold hover:bg-teal-800 text-teal-800 hover:text-white ring-2 ring-teal-800  duration-150 shadow-md focus:ring focus:ring-cyan-600 focus:ring-offset-5 w-[350px] md:w-auto m-3">জামিয়ার ছাত্রদের রেজাল্ট</Link>
+
+        <Link to='/about' className="bg-white border-teal-700 px-2 py-2 rounded-lg text-base font-bold hover:bg-teal-800 text-teal-800 hover:text-white ring-2 ring-teal-800  duration-150 shadow-md focus:ring focus:ring-cyan-600 focus:ring-offset-5 w-[350px] md:w-auto">জামিয়ার শিক্ষক এবং ছাত্রদের তথ্য</Link>
       </div>
       <Footer toast={toast} setIsLogin={setIsLogin} isLogin={isLogin} />
       <ToastContainer />

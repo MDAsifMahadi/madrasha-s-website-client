@@ -19,7 +19,7 @@ const Content = ({title, desc, id, isLogin, toast}) => {
         isLogin && <FaRegTrashAlt size={20} className="text-red-500 absolute top-2 right-2 cursor-pointer" onClick={handleDelete} />
       } 
       <h2 className="font-bold text-lg border-b-2 border-b-cyan-900 pb-1">{title}</h2>
-      <p>{desc}</p>
+      <p className="text-justify">{desc}</p>
     </div>
   )
 }
